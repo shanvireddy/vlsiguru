@@ -8,11 +8,11 @@ int position=0;	//a global variable which holds the position of node in the list
 /* function prototypes*/
 
 int DisplayMenu();
-void CreateList(int n);
+void CreateList();
 void AddNode();
 void DeleteNode(int element);
 void DisplayList();
-void DeleteList();
+int DeleteList();
 int SearchList();
 
 typedef struct node 
@@ -28,7 +28,6 @@ typedef struct node
 /* Creating a linked list*/ 
 void CreateList()
  {
- 		int i;
  	struct node data;
  	struct node *temp;
  	
@@ -51,20 +50,39 @@ void CreateList()
 			}
 				scanPtr -> next = temp;		
 		}
-	
-	}
 		printf("The list has been created:\n\n");
  }
+
 void AddNode()
 {
  	struct node *temp;
+ 	int AfterNode;
+ 	
+ 	/*creating a new node*/
  	temp=(NODE*)malloc(sizeof(NODE));
- 	printf("enter the node to add at the begining:\n");
- 	scanf("%d",&temp->data);
  	temp->next=NULL;
- 	printf("the temp is:%x\n",temp);
- 		temp->next=head;
- 		head=temp;
+ 	
+ 	printf("enter the node after which the node to added:\n");
+ 	scanf("%d",&AfterNode);
+ 	
+ 	printf("enter the node to add at specific position:\n");
+ 	scanf("%d",&temp->data);
+ 	
+ 	scanPtr=head;
+ 	while(scanPtr->next!=NULL && (scanPtr->data)!= AfterNode)
+ 	{
+ 		scanPtr=scanPtr->next;
+	}
+		if(scanPtr->data==AfterNode)
+		{
+			
+			temp->next=scanPtr->next;
+			scanPtr->next=temp;
+		}
+		if(scanPtr->next==NULL&& (scanPtr->data)!= AfterNode)
+		{
+			scanPtr->next=temp;
+		}
 }
 
 void DeleteNode(int element)
@@ -96,9 +114,7 @@ void DeleteNode(int element)
 			printf("the node with %d element is deleted\n",element);
 	}
 	else
-	{
-		printf("the node with %d element is not found in the list\n",element);
-	}	
+		printf("the node with %d element is not found in the list\n",element);	
 }
 /*function to display the contents of the linked list*/
 
@@ -113,9 +129,10 @@ void DeleteNode(int element)
 	 {
 	 	temp=head;
 	 	printf("the Linked list is :\n");
-	 	for(temp=head;temp!=NULL;temp=temp->next)
+	 	while(temp!=NULL)
 	 	{
 			printf("%d ",temp->data);
+			temp=temp->next;
 		}
 		printf("\n..............\n");
 	 }
@@ -123,7 +140,7 @@ void DeleteNode(int element)
  }
  /*function to delete the whole contents of the linked list*/
  
-void DeleteList()
+int DeleteList()
 {
  	int flag;
  	flag=1;
