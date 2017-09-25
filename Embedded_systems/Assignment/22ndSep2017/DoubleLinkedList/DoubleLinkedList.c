@@ -158,7 +158,14 @@ void DisplayForward()
 }
 void DisplayBackward()
 {
-   
+   struct node *temp;
+   temp=scanPtr;
+	while(temp!=NULL)
+	{
+		printf("%d\n",temp->data);
+		temp=temp->left;
+	}
+	printf("\n........................\n");
 	
 }
 void DeleteList()
