@@ -2,7 +2,9 @@
 
 #include<stdio.h>
 #include<malloc.h>
-
+#define TRUE 1
+#define FALSE 0
+int position=0;	//a global variable which holds the position of node in the list
 
 /* Function Prototyes*/
 void CreateList();
@@ -11,7 +13,7 @@ void DeleteNode();
 void DisplayForward();
 void DisplayBackward();
 void DeleteList();
-void SearchList();
+int SearchList();
 int DisplayMenu();
 
 typedef struct node 
@@ -29,6 +31,7 @@ NODE *last=NULL;
     {
         int flag ;
         int choice ;
+        int result;
         
         flag = 1 ;
         
@@ -69,6 +72,14 @@ NODE *last=NULL;
                 case 7:
                 {
                     SearchList();
+                    if(result==TRUE)
+                    {
+                    	printf("the searched element is found at node %d\n\n",position+1);
+					}
+					else
+					{
+						printf("the searched element is not found in the List\n\n");
+					}
                     break ;
                 }
                 case 8:
@@ -142,7 +153,7 @@ void DisplayForward()
 	struct node *temp;
 	   if(head==NULL)
 	   {
-		   printf("the list is Emty\n");
+		   printf("the list is Empty\n\n");
 	    }
 	   else
 	    {
@@ -172,7 +183,30 @@ void DeleteList()
 {
 	
 }
-void SearchList()
+int SearchList()
 {
+	int element;
+	printf("enter element to be searched \n");
+	scanf("%d",&element);
+	
+	if(head==NULL)
+	{
+		DisplayForward();
+	}
+	else
+	{
+		scanPtr=head;
+		while(scanPtr!=NULL)
+		{
+			if(scanPtr->data==element)
+			{
+				return TRUE;
+			
+			}
+			position++;
+			scanPtr=scanPtr->right;	
+		}
+		return FALSE;
+	}
 	
 }
