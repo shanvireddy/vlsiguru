@@ -139,11 +139,26 @@ void DeleteNode()
 }
 void DisplayForward()
 {
-
+	struct node *temp;
+	   if(head==NULL)
+	   {
+		   printf("the list is Emty\n");
+	    }
+	   else
+	    {
+			temp=head;
+			printf("the doubly Linked List is:\n");
+	    	while(temp!=NULL)
+	    	{
+		   		printf("%d ",temp->data);
+		   		temp=temp->right;
+	    	}
+	    printf("\n........................\n");
+		}
 }
 void DisplayBackward()
 {
-
+   
 	
 }
 void DeleteList()
