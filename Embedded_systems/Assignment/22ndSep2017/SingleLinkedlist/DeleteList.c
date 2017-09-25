@@ -96,10 +96,10 @@ void DeleteNode()
  	{
  		head = scanPtr->next;
 		free(scanPtr);
-		scanPtr = scanPtr->next;
 		return scanPtr->data;
+		scanPtr = scanPtr->next;
 	} 
-	printf("scanpointer=%d\n",scanPtr);
+	free(scanPtr);
  }
  int SearchList()
  {
