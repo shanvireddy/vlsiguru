@@ -1,6 +1,8 @@
-/* rogram to implement Double Linked List*/
+/* program to implement Double Linked List*/
 
 #include<stdio.h>
+#include<malloc.h>
+
 
 /* Function Prototyes*/
 void CreateList();
@@ -18,10 +20,11 @@ typedef struct node
        struct node *left ;
        struct node *right ;
     } NODE ;
-    
-    /* Declare head of the list as a Global Variable */
-    NODE  *head ;
-    NODE  *scanPtr ;
+/* Declare head of the list as a Global Variable */
+NODE  *head=NULL ;
+NODE  *scanPtr=NULL ;
+NODE *last=NULL;   
+  
     int main()
     {
         int flag ;
@@ -100,7 +103,31 @@ int DisplayMenu()
 }
 void CreateList()
 {
-	
+	struct node data;
+ 	struct node *temp;
+ 	struct node *current;
+ 	
+		temp = (NODE*) malloc(sizeof(NODE)); // creation of a new node
+		printf("the element into node:\t");
+		scanf("%d",&temp->data);
+	 	temp->left=NULL;
+	 	temp->right=NULL;	
+	 	if(head==NULL)
+	 	{
+	 		head=temp;	
+		}
+		else
+		{
+			scanPtr=head;	
+			while(scanPtr->right!=NULL)
+			{
+				scanPtr=scanPtr->right;
+			}
+			
+			scanPtr->right=temp;
+			temp->left=scanPtr;			
+		}
+		printf("the list has been created\n\n");
 }
 void AddNode()
 {
@@ -112,10 +139,11 @@ void DeleteNode()
 }
 void DisplayForward()
 {
-	
+
 }
 void DisplayBackward()
 {
+
 	
 }
 void DeleteList()
