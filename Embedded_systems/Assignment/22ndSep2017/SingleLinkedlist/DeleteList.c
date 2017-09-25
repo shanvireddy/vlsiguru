@@ -47,16 +47,23 @@ void CreateList(int n)
 	
 	}
 		printf("The list has been created:\n\n");
-	
  }
- void AddNode()
- {
+void AddNode()
+{
+ 	struct node *temp;
+ 	temp=(NODE*)malloc(sizeof(NODE));
+ 	printf("enter the node to add at the begining:\n");
+ 	scanf("%d",&temp->data);
+ 	temp->next=NULL;
+ 	printf("the temp is:%x\n",temp);
+ 		temp->next=head;
+ 		head=temp;
+}
+
+void DeleteNode()
+{
  	
- }
- void DeleteNode()
- {
- 	
- }
+}
  void DisplayList()
  {
  	struct node *temp;
@@ -76,14 +83,23 @@ void CreateList(int n)
 	 }
 	 
  }
- void DeleteList()
+ int DeleteList()
  {
- 	scanPtr=head;
- 	if(scanPtr!=NULL)
+ 	int flag;
+ 	flag=1;
+ 	 if(head==NULL) 
+	 {
+		return;
+	 }
+	scanPtr=head;
+ 	while(scanPtr != NULL)
  	{
- 		head=NULL;
-	}
- 	
+ 		head = scanPtr->next;
+		free(scanPtr);
+		scanPtr = scanPtr->next;
+		return scanPtr->data;
+	} 
+	printf("scanpointer=%d\n",scanPtr);
  }
  int SearchList()
  {
@@ -111,6 +127,7 @@ void CreateList(int n)
         int choice ;
         int n;
         int result;
+        int deletedata;
         flag = 1 ;
         
         while (flag ==1)
@@ -136,13 +153,14 @@ void CreateList(int n)
                 }
                 case 4:
                 {
-                    DisplayList() ;
+                    DisplayList();
                     break ;
                 }
                 case 5:
                 {
-                     DeleteList() ; /* travese through the list and remove each element by element */
-                     break ;
+                     deletedata=DeleteList() ; /* travese through the list and remove each element by element */
+					 DisplayList();
+					 break ;
                 }
                 case 6:
                 {
