@@ -125,11 +125,21 @@ void DeleteNode(int element)
  
 void DeleteList()
 {
- 	scanPtr=head;
- 	if(scanPtr!=NULL)
+ 	int flag;
+ 	flag=1;
+ 	 if(head==NULL) 
+	 {
+		return;
+	 }
+	scanPtr=head;
+ 	while(scanPtr != NULL)
  	{
- 		head=NULL;
-	} 	
+ 		head = scanPtr->next;
+		free(scanPtr);
+		return scanPtr->data;
+		scanPtr = scanPtr->next;
+	} 
+	free(scanPtr);	
  }
 /* function to search a node in the linked list*/
 
