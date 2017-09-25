@@ -14,14 +14,12 @@ typedef struct node
    	struct node *scanPtr ;
    	
 /* Creating a linked list*/ 
-void CreateList(int n)
+void CreateList()
  {
  	int i;
  	struct node data;
  	struct node *temp;
-
-	for(i=0;i<n;i++)
-	{	
+ 	
 		temp = (NODE*) malloc(sizeof(NODE)); // creation of a new node
 		
 		printf("the element into node:\n");
@@ -42,9 +40,6 @@ void CreateList(int n)
 				scanPtr -> next = temp;		
 		}
 	
-	}
-		printf("The list has been created:\n");
-	
  }
  void AddNode()
  {
@@ -56,7 +51,22 @@ void CreateList(int n)
  }
  void DisplayList()
  {
- 	
+ 	struct node *temp;
+	 if(head==NULL) 
+	 {
+	 	printf("the Linked list is Empty:\n\n");
+	 }
+	 else
+	 {
+	 	temp=head;
+	 	printf("the Linked list is :\n");
+	 	for(temp=head;temp!=NULL;temp=temp->next)
+	 	{
+			printf("%d ",temp->data);
+		}
+		printf("\n..............\n");
+	 }
+	 
  }
  void DeleteList()
  {
@@ -81,10 +91,8 @@ void CreateList(int n)
              switch(choice)
              {  case 1 :
                 { 
-                	printf("eneter no.of nodes to be created:\n");
-                	scanf("%d",&n);
-                     CreateList(n) ;
-                     break ;
+                    CreateList() ;
+                    break ;
                 }
                 case 2:
                 {
