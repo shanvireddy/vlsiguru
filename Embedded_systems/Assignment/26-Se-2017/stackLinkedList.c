@@ -2,6 +2,7 @@
 
 #include<stdio.h>
 #include<malloc.h>
+void DisplayList();
 
 typedef struct node
 {
@@ -45,16 +46,32 @@ void PushNode()
 	}
 	
 }
-void PopNode()
+int PopNode()
 {
-	
+	struct node *temp;
+	if(top==NULL)
+	{
+		return;
+	}
+	else
+	{
+		temp=top;
+		while(temp!=NULL)
+		{
+			top=temp->next;
+			free(temp);
+			return temp->data;	
+			temp=temp->next;
+		}
+	}
+	temp=0;
 }
 void DisplayList()
 {
 	struct node *temp;
 	if(top==NULL)
 	{
-		printf("the Stack is Empty\n");
+		printf("the Stack is Empty\n\n");
 	}
 	else
 	{
@@ -72,6 +89,7 @@ int main()
 {
 	int choice;
 	int flag;
+	int data;
 	flag=1;
 	while(flag)
 	{
@@ -85,7 +103,8 @@ int main()
 				}
 			case 2:
 				{
-					PopNode();
+					data=PopNode();
+					DisplayList();
 					break;
 				}
 			case 3:
