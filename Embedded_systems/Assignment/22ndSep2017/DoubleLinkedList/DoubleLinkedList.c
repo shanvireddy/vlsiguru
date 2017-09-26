@@ -27,13 +27,14 @@ NODE  *head=NULL ;
 NODE  *scanPtr=NULL ;
 NODE *last=NULL;   
   
-    int main()
-    {
-        int flag ;
-        int choice ;
-        int result;
+int main()
+{
+    int flag ;
+    int choice ;
+    int result;
+    //int dnode;
         
-        flag = 1 ;
+    flag = 1 ;
         
         while (flag ==1)
         {
@@ -51,7 +52,7 @@ NODE *last=NULL;
                 }
                 case 3:
                 {
-                     DeleteNode();
+					 DeleteNode();
                      break ;
                 }
                 case 4:
@@ -142,12 +143,41 @@ void CreateList()
 }
 void AddNode()
 {
-	
+	struct node *temp;
+ 	int AfterNode;
+ 	
+ 	/*creating a new node*/
+ 	temp=(NODE*)malloc(sizeof(NODE));
+ 	temp->right=NULL;
+ 	temp->left=NULL;
+ 	
+ 	printf("enter the node after which the node to added:\n");
+ 	scanf("%d",&AfterNode);
+ 	
+ 	printf("enter the node to add at specific position:\n");
+ 	scanf("%d",&temp->data);
+ 	
+ 	scanPtr=head;
+ 	while(scanPtr->right!=NULL && (scanPtr->data)!= AfterNode)
+ 	{
+ 		scanPtr=scanPtr->right;
+	}
+		if(scanPtr->data==AfterNode)
+		{
+			
+			temp->right=scanPtr->right;
+			scanPtr->right=temp;
+		}
+		if(scanPtr->right==NULL&& (scanPtr->data)== AfterNode)
+		{
+			scanPtr->right=temp;
+		}
 }
 void DeleteNode()
 {
-	
+
 }
+
 void DisplayForward()
 {
 	struct node *temp;
@@ -171,6 +201,7 @@ void DisplayBackward()
 {
    struct node *temp;
    temp=scanPtr;
+   
 	while(temp!=NULL)
 	{
 		printf("%d\n",temp->data);
