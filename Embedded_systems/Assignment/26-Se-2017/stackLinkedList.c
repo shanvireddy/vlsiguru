@@ -1,6 +1,7 @@
 /* Program to Implement stack using Single Linked List*/
 
 #include<stdio.h>
+#include<malloc.h>
 
 typedef struct node
 {
@@ -9,7 +10,7 @@ typedef struct node
 	
 }NODE;
 /* Declare top of the stack as a Global Variable */ 
-struct node *top;   //top pointer points to the address of starting node    
+struct node *top=NULL;   //top pointer points to the address of starting node    
 int DisplayMenu()
 {
 	int choice;
@@ -25,6 +26,23 @@ int DisplayMenu()
 }
 void PushNode()
 {
+	struct node *temp;
+	struct node *scanPtr;
+	/*creating a new node*/
+	temp=(NODE*)malloc(sizeof(NODE));
+	printf("enter the node to add at the begining:\n");
+ 	scanf("%d",&temp->data);
+	temp->next=NULL;
+	if(top==NULL)
+	{
+		top=temp;
+		return;
+	}
+	else
+	{
+		temp->next=top;
+ 		top=temp;
+	}
 	
 }
 void PopNode()
