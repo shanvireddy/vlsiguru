@@ -51,7 +51,22 @@ void PopNode()
 }
 void DisplayList()
 {
-	
+	struct node *temp;
+	if(top==NULL)
+	{
+		printf("the Stack is Empty\n");
+	}
+	else
+	{
+		temp=top;
+		printf("the stack is:\n");
+		while(temp!=NULL)
+		{
+			printf("%d\n",temp->data);
+			temp=temp->next;
+		}
+		printf("..................\n");
+	}
 }
 int main()
 {
