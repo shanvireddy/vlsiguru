@@ -12,7 +12,7 @@ void AddNode();
 void DeleteNode();
 void DisplayForward();
 void DisplayBackward();
-void DeleteList();
+int DeleteList();
 int SearchList();
 int DisplayMenu();
 
@@ -179,9 +179,25 @@ void DisplayBackward()
 	printf("\n........................\n");
 	
 }
-void DeleteList()
+int DeleteList()
 {
-	
+	int flag;
+ 	flag=1;
+ 	 if(head==NULL) 
+	 {
+		return;
+	 }
+	scanPtr=head;
+ 	while(scanPtr != NULL)
+ 	{
+ 		head = scanPtr->right;
+ 		scanPtr->left=NULL;
+		free(scanPtr);
+		return scanPtr->data;
+		scanPtr = scanPtr->right;
+		
+	} 
+	free(scanPtr);
 }
 int SearchList()
 {
