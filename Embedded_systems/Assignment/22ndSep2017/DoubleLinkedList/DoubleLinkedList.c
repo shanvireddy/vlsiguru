@@ -32,7 +32,7 @@ int main()
     int flag ;
     int choice ;
     int result;
-    //int dnode;
+    int dnode;
         
     flag = 1 ;
         
@@ -52,7 +52,9 @@ int main()
                 }
                 case 3:
                 {
-					 DeleteNode();
+					printf("enter the node to delete:\n");
+                     scanf("%d",&dnode);
+					 DeleteNode(dnode);
                      break ;
                 }
                 case 4:
@@ -173,9 +175,37 @@ void AddNode()
 			scanPtr->right=temp;
 		}
 }
-void DeleteNode()
+void DeleteNode(int deletenode)
 {
-
+		struct node *temp;	
+	if(head==NULL)
+		printf("there are no elements to delete:\n");
+	temp=head;
+	/* if the element to delete is found at the beginning(head) of the list*/
+	if(temp->data==deletenode)
+	{
+		head=temp->right;
+		temp->left=NULL;
+		free(temp);
+	}
+	/*scanning for the node to delete*/
+	else
+	{
+	scanPtr=temp->right;
+	if(scanPtr!=NULL && scanPtr->data!=deletenode)
+	{
+			temp=temp->right;
+			scanPtr=scanPtr->right;
+	}
+	/* if the element to delete is found somewhere in the list*/	
+	if((scanPtr)->data==deletenode)
+	{
+			temp->right=scanPtr->right;
+			(scanPtr->right)->left=scanPtr->left;
+			free(scanPtr);
+			printf("the node with %d element is deleted\n",deletenode);
+	}
+}
 }
 
 void DisplayForward()
@@ -255,5 +285,4 @@ int SearchList()
 		}
 		return FALSE;
 	}
-	
 }
