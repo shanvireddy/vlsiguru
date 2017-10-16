@@ -192,5 +192,25 @@ main()
 	Ptr=NULL;	/* Ptr is no more dangling pointer */
 }
 ````
+### 11.What is called a void pointer and what are the uses of a void pointer?
+A pointer variable declared using a particular data type can not hold the location address of variables of other data types. It is invalid and will result in a compilation error.
+A void pointer is nothing but a pointer variable declared using the reserved word in C ‘void’.When a pointer variable is declared using keyword void, Address of any variable of any data type (char, int, float etc.)can be assigned to a void pointer variable.
+void *temp; /* temp is a void pointer */
+To dereference void pointer we need to typecast pointer variable.This is because a void pointer has no data type associated with it.
+````
+#include<stdio.h>
+main()
+{
+   int a=10;
+   float b=35.75;
+   void *ptr; // Declaring a void pointer
+ 
+   ptr=&a; // Assigning address of integer to void pointer.
+
+   printf("The value of integer variable is= %d\n",*( (int*) ptr) );/*  *((int*)ptr) dereferences the typecasted void pointervariable.*/
+   ptr=&b; // Assigning address of float to void pointer.
+   printf("The value of float variable is= %f\n",*( (float*) ptr) );
+}
+````
 
 
