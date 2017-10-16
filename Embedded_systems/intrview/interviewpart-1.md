@@ -1,4 +1,4 @@
-# Part one
+# Part One
 
 ### 1.When we talk about variables there is a term called "Scope of a Variable" what is it can you explain to me ?
 A scope is a region of program.Scope of a Variable is a region of program where a defined variable can have its existance and beyond that the variable cannot be accessed.
@@ -163,4 +163,20 @@ float *temp; // declares a pointer variale temp of float data type
 Yes, I have used pointer with functions to return multiple values,point to allocate memory at runtime and also used with data structures.
 
 ### 10.I had heard of a term called dangling pointer Can you help me to understand what exactly is a dangling pointer?
+Dangling pointers arise when an object is deleted or de-allocated, without modifying the value of the pointer, so that the pointer still points to the memory location of the de-allocated memory.
+In short pointer pointing to non-existing memory location is called  dangling pointer.
+##Example:
+````
+#include<stdio.h>
+#include<malloc.h>
+
+main()
+{
+   int *Ptr;
+   Ptr=(int*)malloc(sizeof(int));
+   printf("the ptr is:%x\n",Ptr);
+   free(Ptr);  //Ptr now becomes a dangling pointer
+}
+````
+
 
