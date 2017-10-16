@@ -33,7 +33,7 @@ A storage class defines the scope (visibility) and life time of variables and/or
 
 1.```auto storage class```: The auto storage class is the default storage class for all local variables.
 
-2.```extern storage class```: When extern storage specifier is used with a variable declaration then no storage is allocated to that variable and it is assumed that the variable has already been defined elsewhere in the program.
+2.```extern storage class```: The extern storage class is used to give a reference of a global variable that is visible to all the program files. When you use 'extern', the variable cannot be initialized however, it points the variable name at a storage location that has been previously defined.When we have multiple files and we define a global variable or function, which will also be used in other files, then extern will be used in another file to provide the reference of defined variable or function
 
 3.```static storage class```:  the global variable by default a static variables utit is restricted to only that file.Static variables are not visible outside its function and they are not destroyed once the funtion or block has comletd its execution.
 
@@ -44,8 +44,8 @@ main()
 {
 	int count;
 	count=3;
+	
      /*block of code the static variable has its existance*/
-     
 	while(count!=0)
 	{
 		static int x=10;// x is a static variable
@@ -120,3 +120,6 @@ main()
 	
 	printf("the address of x is:%x\n",&x);// Compilation Error because the variable x is allocated in the register
 }'''
+### 6.I have doubt - can you tell me when I should use while() loop and do while() loop ? I really do not under stand the difference betweeb these two, can you explain to me ?
+while(): this loop is executes statements untill the condition of the while loop evaluates ```TRUE```.the loop gets terminated when condion becomes ```FALSE```.
+do while():If we want to execute the loop body at least once then do while loop is used.It executs the statement secified in the loop body first,and then evaluates the condition.Do while loop executes untill the condition is ```TRUE```.if the condition is ```FALSE```loop will be terminated.
