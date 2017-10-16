@@ -38,8 +38,9 @@ A storage class defines the scope (visibility) and life time of variables and/or
 3.```static storage class```: Static variables are not visible outside its function and they are not destroyed once the funtion or block has finished its execution.
 
 4.```register storage class```: The variables declared with register specifier are allocated memory in the CPU register instaed of RAM.This means the variable has the maximum size equal to the size of the register.
+
 #include<stdio.h>
-```main()
+main()
 {
 	register int x; // the variable belongs to register storahe class
 	float y;
@@ -51,4 +52,4 @@ A storage class defines the scope (visibility) and life time of variables and/or
 	printf("the address of y is:%f\n",y);
 	
 	printf("the address of x is:%x\n",&x);// Compilation Error because the variable x is allocated in the register
-}```
+}
