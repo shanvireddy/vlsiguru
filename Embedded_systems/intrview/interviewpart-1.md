@@ -121,5 +121,5 @@ main()
 	printf("the address of x is:%x\n",&x);// Compilation Error because the variable x is allocated in the register
 }'''
 ### 6.I have doubt - can you tell me when I should use while() loop and do while() loop ? I really do not under stand the difference betweeb these two, can you explain to me ?
-while(): this loop is executes statements untill the condition of the while loop evaluates ```TRUE```.the loop gets terminated when condion becomes ```FALSE```.
+while(): this loop is executes statements untill the condition of the while loop evaluates ```TRUE.the loop gets terminated when condion becomes ```FALSE```.
 do while():If we want to execute the loop body at least once then do while loop is used.It executs the statement secified in the loop body first,and then evaluates the condition.Do while loop executes untill the condition is ```TRUE```.if the condition is ```FALSE```loop will be terminated.
