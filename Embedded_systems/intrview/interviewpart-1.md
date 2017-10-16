@@ -11,10 +11,15 @@ There are two types of variales:
 
 ### 2.We have to terms related to variables, Declaration and Defintion what are they, explain with an example?
 1.Declaring a variable is to tell the compiler what  data tye the variale belongs to and size of that variable.No memeory space is reserved during declaration. However compiler knows how much space to reserve in case a variable of this type is created.
+
 Ex: int x;// x is an integer
+
 float y;//y is a float 
+
 2.Definition of a variable means the memory is allocated for the declared variable and some initial value is assigned.
+
 Ex:x=0;//allocates memory of 2 bytes and the value 0 is assigned to x
+
 y=10;//allocates memory of 4 bytes and the value 10 is assigned to x
 
 ### 3.What is you mean by declaring an array ? How is array different from a normal variable declaration?
