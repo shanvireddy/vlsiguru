@@ -140,7 +140,7 @@ main()
 	int count=2;
 	while(count!=0)
 	{
-		Ptr=(int*)malloc(sizeof(int));
+		Ptr=(int*)malloc(sizeof(int));	//returns reference to the block of memory of the secified size 
 		printf("the ptr is:%x\n",Ptr);
 		count--;
 	}
