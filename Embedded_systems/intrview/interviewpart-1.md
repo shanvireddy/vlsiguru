@@ -29,8 +29,8 @@ Declaring an Array means to tell the comiler the type and the size of array(howm
 ### 4.When an array is declared where is array created ?
 when an array is declared it is created on to the stack.
 ### 5.What are the different types of Storate Class specifiers in C ? - List all of them When and how they should be used?
-A storage class defines the scope (visibility) and life time of variables and/or functions within a C Program
-```1.auto storage class```: Variables belonging to Auto are local to that block and are destroyed when the block has finished it's execution. All variables declared by default belongs to Auto storage class. It is declared by using the keyword Auto
-```2.extern```: When extern specifier is used with a variable declaration then no storage is allocated to that variable and it is assumed that the variable has already been defined elsewhere in the program.
-```3.static```: Static variables are not visible outside its function and they are not destroyed once the funtion or block has finished its execution.
-```4.register```: The variables declared with register specifier are allocated memory in the CPU register.
+A storage class defines the scope (visibility) and life time of variables and/or functions within a C Program.
+1.```auto storage class```: Variables belonging to Auto are local to that block and are destroyed when the block has finished it's execution. All variables declared by default belongs to Auto storage class. It is declared by using the keyword Auto
+2.```extern storage class```: When extern specifier is used with a variable declaration then no storage is allocated to that variable and it is assumed that the variable has already been defined elsewhere in the program.
+3.```static storage class```: Static variables are not visible outside its function and they are not destroyed once the funtion or block has finished its execution.
+4.```register storage class```: The variables declared with register specifier are allocated memory in the CPU register.
