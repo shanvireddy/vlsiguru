@@ -35,14 +35,69 @@ A storage class defines the scope (visibility) and life time of variables and/or
 
 2.```extern storage class```: When extern storage specifier is used with a variable declaration then no storage is allocated to that variable and it is assumed that the variable has already been defined elsewhere in the program.
 
-3.```static storage class```: Static variables are not visible outside its function and they are not destroyed once the funtion or block has finished its execution.
+3.```static storage class```:  the global variable by default a static variables utit is restricted to only that file.Static variables are not visible outside its function and they are not destroyed once the funtion or block has comletd its execution.
+##Example1:
+```#include<stdio.h>
+main()
+{
+	int count;
+	count=3;
+	
+	while(count!=0)
+	{
+		static int x=10;// x is a static variable
+		int y=10;
+		printf("x is=%d\n",x++);
+		printf("y is=%d\n",y++);
+		count--;
+	}	
+}```
+output:
+x is 10
+y is 10
+x is 11
+y is 10
+x is 12
+y is 10
+##Example2:
+#include<stdio.h>
+void printX()
+{
+	static int x=10; // static variable  dclaration
+	x++;
+	printf("static x  = %d\n",x);
+}
+void printY()
+{
+	int x;
+	x=15;
+	x++;
+	printf("x = %d\n",x);
+}
+main()
+{
+	int count;
+	count=3;	
+	while(count!=0)
+	{
+		printX();
+		count--;
+	}
+	count=3;
+	while(count!=0)
+	{
+		printY();
+		count--;
+	}	
+}
+output:
 
-4.```register storage class```: The variables declared with register specifier are allocated memory in the CPU register instaed of RAM.This means the variable has the maximum size equal to the size of the register.
+4.```register storage class```: The variables declared with register specifier are allocated memory in the CPU register instaed of RAM.This means the variable has the maximum size equal to the size of the register.The register should only be used for variables that require quick access.
 
 ```#include<stdio.h>
 main()
 {
-	register int x; // the variable belongs to register storahe class
+	register int x; // the variable belongs to register storage class
 	float y;
 	
 	x=10;
