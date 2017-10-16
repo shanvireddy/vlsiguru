@@ -179,41 +179,44 @@ main()
 }
 ````
 After de-allocating memory, initialize pointer to NULL so that pointer will be no longer dangling.Assigning NULL value means pointer is not pointing to any memory location.
-````
-#include<stdio.h>
-#include<malloc.h>
 
-main()
-{
-	int *Ptr;
-	Ptr=(int*)malloc(sizeof(int));
-	printf("the ptr is:%x\n",Ptr);
-	free(Ptr);	/* Ptr now becomes a dangling pointer */
-	Ptr=NULL;	/* Ptr is no more dangling pointer */
-}
-````
 ### 11.What is called a void pointer and what are the uses of a void pointer?
-A pointer variable declared using a particular data type can not hold the location address of variables of other data types. It is invalid and will result in a compilation error.
 A void pointer is nothing but a pointer variable declared using the reserved word in C ‘void’.When a pointer variable is declared using keyword void, Address of any variable of any data type (char, int, float etc.)can be assigned to a void pointer variable.
-
 void *temp; /* temp is a void pointer */
-
 To dereference void pointer we need to typecast pointer variable.This is because a void pointer has no data type associated with it.
-````
-#include<stdio.h>
-main()
-{
-   int a=10;
-   float b=35.75;
-   void *ptr; // Declaring a void pointer
- 
-   ptr=&a; // Assigning address of integer to void pointer.
-
-   printf("The value of integer variable is= %d\n",*( (int*) ptr) );/*  *((int*)ptr) dereferences the typecasted void pointervariable.*/
-   ptr=&b; // Assigning address of float to void pointer.
-   printf("The value of float variable is= %f\n",*( (float*) ptr) );
-}
-````
 ## Use of Void pointer:
  If the programmer is not sure about the data type of data inputted by the user. In such a case the programmer can use a void pointer to point to the location of the unknown data type.
 Important point about void pointer is that ````pointer arithmatic is not performed on void pointers.```` 
+### 12.Have you heard of the term  Modular programming is it different from  structure programming if so how ?
+No,Modular programming and structured programming are same.Modular programming means the program can be divided into modules to perform a articular task. 
+### 13.Let says we have switch()-case statement in C - Can you tell me what is the use of a switch case statement ?
+switch()-case in C is used mainly for menu driven programs.a switch statement compares the value of a variable to the values specified in case statements. When a case statement is found whose value matches that of the variable, the code in that case statement is run.If not matches with the variable control goes to default case.
+### 14.Can you Look at the following code ............ will the compiler gives an error ? 
+````
+     main()
+     {
+        int i ;
+        
+        switch(i)
+        {
+           case 1: {
+                      break ;
+                   }
+           case 2: {
+                      break ;
+                   }
+           default : {
+                        break ;
+                     }
+           case 3:   {
+                        break ;
+                     }
+           case 4:   {
+                        break ;
+                     }     
+        }
+     }
+  ````
+No,it will not give any comilation error.
+### 15. Do we really need a break statement in *defualt* condition of a switch() - case: statement?
+No,we do not require break in default case as we write the default case at last of switch case.But if we write somewhere in switch() like above program compulsary we need break statement in default condition.
