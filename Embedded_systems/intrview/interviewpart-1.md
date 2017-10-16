@@ -175,7 +175,21 @@ main()
    int *Ptr;
    Ptr=(int*)malloc(sizeof(int));
    printf("the ptr is:%x\n",Ptr);
-   free(Ptr);  //Ptr now becomes a dangling pointer
+   free(Ptr);  //memory is deallocated and Ptr now becomes a dangling pointer
+}
+````
+After de-allocating memory, initialize pointer to NULL so that pointer will be no longer dangling.Assigning NULL value means pointer is not pointing to any memory location.
+````
+#include<stdio.h>
+#include<malloc.h>
+
+main()
+{
+	int *Ptr;
+	Ptr=(int*)malloc(sizeof(int));
+	printf("the ptr is:%x\n",Ptr);
+	free(Ptr);	/* Ptr now becomes a dangling pointer */
+	Ptr=NULL;	/* Ptr is no more dangling pointer */
 }
 ````
 
