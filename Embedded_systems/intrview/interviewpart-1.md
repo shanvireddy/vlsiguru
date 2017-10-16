@@ -220,3 +220,22 @@ switch()-case in C is used mainly for menu driven programs.a switch statement co
 No,it will not give any comilation error.
 ### 15. Do we really need a break statement in *defualt* condition of a switch() - case: statement?
 No,we do not require break in default case as we write the default case at last of switch case.But if we write somewhere in switch() like above program compulsary we need break statement in default condition.
+### 16.For doing a file operation we need to open the file. What are the checks and things to be done while handling a file ?
+1.If we scan a input file,when user enters filename it checks for the entered file exist or not. 
+2. we have to check for pointer to the file returns a NULL or not.
+3.Upon successfull of file oerations we need to close the file using fclose(pointer) function.  
+
+### 17. What is the function call (or API) to open a files can you  explain all the parameters that this API takes and list all possible variations of the parameters of this function.
+### 18. Have you heard of a term called enumuration ?
+### 19 In fprintf() which prints a string to a file, what happen if the first parameter is replaced with stdout ?
+### 20.Have you heard of word recursion, what is it used ? Can you write a small program which uses recursion ?
+### 21. Can you help to understand what are bit wise operators ?
+### 22. While talking to a friend I heard of a term called variable parameters in C what exactly it is  can you explain to me ?
+### 23.Can you explain to me with an example how to use command line program with an example ?
+### 24. I wrote a big program, but the entry point main() is empty is there any thing wrong with it ?
+### 25.I have heard of a term called structures in C - what is its relation to structured programming
+### 26.In a  C function while declaring variables, I had mentioned a keyword *static* will this make any difference ? if so what it is ?
+### 27.I am writing a C  program to accuratly calculate the path of a aeroplane flying in the sky, with help of radar signals. What in the data type I need to use to get accurate value ?
+### 28. Arrays are easy to use,still we go with Linked list what is the reason for this ?
+### 29. In C function there are two terms, actual parameters and formal parameters. What are they ?
+
