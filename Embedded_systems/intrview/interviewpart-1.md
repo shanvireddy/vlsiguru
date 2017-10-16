@@ -249,6 +249,7 @@ Yes,there is a difference.If we declare the variable as static,the varible will 
 ### 28. Arrays are easy to use,still we go with Linked list what is the reason for this ? 
 ### 29. In C function there are two terms, actual parameters and formal parameters. What are they ?
 ````Actual argumetes```` are the source of information;calling function will pass the actual pameters to the called function.
+
 ````Formal Arguments````: these are comma seerated variables which receives the parameters passed by the calling function.these formal arguments are local to that particaular function. 
 
 
