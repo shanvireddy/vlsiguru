@@ -39,7 +39,7 @@ A storage class defines the scope (visibility) and life time of variables and/or
 
 4.```register storage class```: The variables declared with register specifier are allocated memory in the CPU register instaed of RAM.This means the variable has the maximum size equal to the size of the register.
 
-#include<stdio.h>
+```#include<stdio.h>
 main()
 {
 	register int x; // the variable belongs to register storahe class
@@ -52,4 +52,4 @@ main()
 	printf("the address of y is:%f\n",y);
 	
 	printf("the address of x is:%x\n",&x);// Compilation Error because the variable x is allocated in the register
-}
+}'''
