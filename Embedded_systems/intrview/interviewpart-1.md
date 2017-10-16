@@ -39,7 +39,7 @@ A storage class defines the scope (visibility) and life time of variables and/or
 
 ##Example1: this program explains static variable will not be destroyed after comletion of the block of code.
 
-```#include<stdio.h>
+#include<stdio.h>
 main()
 {
 	int count;
@@ -54,7 +54,7 @@ main()
 		printf("y is=%d\n",y++);
 		count--;
 	}	
-}```
+}
 output:
 x is 10
 y is 10
@@ -106,7 +106,7 @@ x =16
 
 4.```register storage class```: The variables declared with register specifier are allocated memory in the CPU register instaed of RAM.This means the variable has the maximum size equal to the size of the register.The register should only be used for variables that require quick access.
 
-```#include<stdio.h>
+#include<stdio.h>
 main()
 {
 	register int x; // the variable belongs to register storage class
@@ -131,7 +131,7 @@ It takes the integer as the parameter that secifis th number of bytes to be allo
 calloc():this function is used for both ,to allocate block of memory and initializes them to 0.
 syntax:
 ptr=(cast-type*)calloc(n,element-size)
-it allocates memory for n blocks in bytes where ezch block is of the size specified by element-size.
+it allocates memory for n blocks in bytes where each block is of the size specified by element-size.
 
 ### 8.Can you explain to me with the help of a small program how malloc() is used ?
 
