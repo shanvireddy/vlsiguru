@@ -38,7 +38,7 @@ A storage class defines the scope (visibility) and life time of variables and/or
 3.```static storage class```:  the global variable by default a static variables utit is restricted to only that file.Static variables are not visible outside its function and they are not destroyed once the funtion or block has comletd its execution.
 
 ##Example1: this program explains static variable will not be destroyed after comletion of the block of code.
-
+````
 #include<stdio.h>
 main()
 {
@@ -62,9 +62,10 @@ x is 11
 y is 10
 x is 12
 y is 10
-
+````
 ##Example2: this program exlains that the static variable will not be visible to outside function but not be destroyed when native function comletes its exection.
 
+````
 #include<stdio.h>
 void printX()
 {
@@ -104,9 +105,10 @@ static x = 13
 x =16
 x =16
 x =16
+````
 
 4.```register storage class```: The variables declared with register specifier are allocated memory in the CPU register instaed of RAM.This means the variable has the maximum size equal to the size of the register.The register should only be used for variables that require quick access.
-
+````
 #include<stdio.h>
 main()
 {
@@ -121,7 +123,7 @@ main()
 	
 	printf("the address of x is:%x\n",&x);// Compilation Error because the variable x is allocated in the register
 }
-
+````
 ### 6.I have doubt - can you tell me when I should use while() loop and do while() loop ? I really do not under stand the difference betweeb these two, can you explain to me ?
 while(): this loop is executes statements untill the condition of the while loop evaluates TRUE.the loop gets terminated when condion becomes FALSE.
 do while():If we want to execute the loop body at least once then do while loop is used.It executs the statement secified in the loop body first,and then evaluates the condition.Do while loop executes untill the condition is TRUE.if the condition is FALSE, the loop will be terminated.
@@ -136,7 +138,7 @@ it allocates memory for n blocks in bytes where each block is of the size specif
 
 ### 8.Can you explain to me with the help of a small program how malloc() is used ?
 The below program exlains how to use malloc function:
-
+````
 #include<stdio.h>
 #include<malloc.h>
 main()
@@ -151,7 +153,7 @@ main()
 	}
 	free(Ptr);
 }
-
+````
 ### 9.I keep hearing the term Pointers in C, what is it all about ? Have you used it any time ?
 Pointer is a variable which holds the address of another variable stored elsewhere in comuter memory.To declare a pointer * symbol is preended to the variable;
 syntax:
