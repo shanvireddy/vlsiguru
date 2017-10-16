@@ -146,3 +146,12 @@ main()
 	}
 	free(Ptr);
 }
+###9.I keep hearing the term Pointers in C, what is it all about ? Have you used it any time ?
+Pointer is a variable which holds the address of another variable stored elsewhere in comuter memory.To declare a pointer * symbol is preended to the variable;
+syntax:
+int *ptr; // declares a pointer variale ptr of integer data type
+float *temp; // declares a pointer variale temp of float data type
+
+Yes, I have used pointer with functions to return multiple values,point to allocate memory at runtime and also used with data structures.
+###10.I had heard of a term called dangling pointer Can you help me to understand what exactly is a dangling pointer?
+
