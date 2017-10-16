@@ -35,7 +35,7 @@ A storage class defines the scope (visibility) and life time of variables and/or
 
 2.```extern storage class```: The extern storage class is used to give a reference of a global variable that is visible to all the program files. When you use 'extern', the variable cannot be initialized however, it points the variable name at a storage location that has been previously defined.When we have multiple files and we define a global variable or function, which will also be used in other files, then extern will be used in another file to provide the reference of defined variable or function
 
-3.```static storage class```:  the global variable by default a static variables utit is restricted to only that file.Static variables are not visible outside its function and they are not destroyed once the funtion or block has comletd its execution.
+3.```static storage class```: Static variables are not visible outside its function and they are not destroyed once the funtion or block has comletd its execution.
 
 ##Example1: this program explains static variable will not be destroyed after comletion of the block of code.
 ````
@@ -222,27 +222,33 @@ No,it will not give any comilation error.
 No,we do not require break in default case as we write the default case at last of switch case.But if we write somewhere in switch() like above program compulsary we need break statement in default condition.
 ### 16.For doing a file operation we need to open the file. What are the checks and things to be done while handling a file ?
 1.If we scan a input file,when user enters filename it checks for the entered file exist or not.
-
 2. we have to check for pointer to the file returns a NULL or not.
-
 3.Upon successfull of file oerations we need to close the file using fclose(pointer) function.  
 
 ### 17. What is the function call (or API) to open a files can you  explain all the parameters that this API takes and list all possible variations of the parameters of this function.
 To open a file fopen() function is used.
 FILE *fopen(const char *filename, const char *mode)
 ````filename```` refers to the name of a data file to be opened.
+
 ````mode```` refers to the type of operaton has to be done on the file either read or write etc.
 
 ### 18. Have you heard of a term called enumuration ?
+Yes,it is a user defined datatype.
 ### 19 In fprintf() which prints a string to a file, what happen if the first parameter is replaced with stdout ?
 ### 20.Have you heard of word recursion, what is it used ? Can you write a small program which uses recursion ?
 ### 21. Can you help to understand what are bit wise operators ?
 ### 22. While talking to a friend I heard of a term called variable parameters in C what exactly it is  can you explain to me ?
 ### 23.Can you explain to me with an example how to use command line program with an example ?
 ### 24. I wrote a big program, but the entry point main() is empty is there any thing wrong with it ?
+Yes,If main is empty there no meaning in writing big program.There has to be call to the functions from the main.
+
 ### 25.I have heard of a term called structures in C - what is its relation to structured programming
 ### 26.In a  C function while declaring variables, I had mentioned a keyword *static* will this make any difference ? if so what it is ?
+Yes,there is a difference.If we declare the variable as static,the varible will not be destroyed after completion of function execution.
 ### 27.I am writing a C  program to accuratly calculate the path of a aeroplane flying in the sky, with help of radar signals. What in the data type I need to use to get accurate value ?
-### 28. Arrays are easy to use,still we go with Linked list what is the reason for this ?
+### 28. Arrays are easy to use,still we go with Linked list what is the reason for this ? 
 ### 29. In C function there are two terms, actual parameters and formal parameters. What are they ?
+````Actual argumetes```` are the source of information;calling function will pass the actual pameters to the called function.
+````Formal Arguments````: these are comma seerated variables which receives the parameters passed by the calling function.these formal arguments are local to that particaular function. 
+
 
