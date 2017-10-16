@@ -221,11 +221,18 @@ No,it will not give any comilation error.
 ### 15. Do we really need a break statement in *defualt* condition of a switch() - case: statement?
 No,we do not require break in default case as we write the default case at last of switch case.But if we write somewhere in switch() like above program compulsary we need break statement in default condition.
 ### 16.For doing a file operation we need to open the file. What are the checks and things to be done while handling a file ?
-1.If we scan a input file,when user enters filename it checks for the entered file exist or not. 
+1.If we scan a input file,when user enters filename it checks for the entered file exist or not.
+
 2. we have to check for pointer to the file returns a NULL or not.
+
 3.Upon successfull of file oerations we need to close the file using fclose(pointer) function.  
 
 ### 17. What is the function call (or API) to open a files can you  explain all the parameters that this API takes and list all possible variations of the parameters of this function.
+To open a file fopen() function is used.
+FILE *fopen(const char *filename, const char *mode)
+````filename```` refers to the name of a data file to be opened.
+````mode```` refers to the type of operaton has to be done on the file either read or write etc.
+
 ### 18. Have you heard of a term called enumuration ?
 ### 19 In fprintf() which prints a string to a file, what happen if the first parameter is replaced with stdout ?
 ### 20.Have you heard of word recursion, what is it used ? Can you write a small program which uses recursion ?
