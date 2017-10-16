@@ -36,13 +36,16 @@ A storage class defines the scope (visibility) and life time of variables and/or
 2.```extern storage class```: When extern storage specifier is used with a variable declaration then no storage is allocated to that variable and it is assumed that the variable has already been defined elsewhere in the program.
 
 3.```static storage class```:  the global variable by default a static variables utit is restricted to only that file.Static variables are not visible outside its function and they are not destroyed once the funtion or block has comletd its execution.
-##Example1:
+
+##Example1: this program explains static variable will not be destroyed after comletion of the block of code.
+
 ```#include<stdio.h>
 main()
 {
 	int count;
 	count=3;
-	
+     /*block of code the static variable has its existance*/
+     
 	while(count!=0)
 	{
 		static int x=10;// x is a static variable
@@ -59,7 +62,8 @@ x is 11
 y is 10
 x is 12
 y is 10
-##Example2:
+##Example2: this program exlains that the static variable will not be visible to outside function but not be destroyed when native function comletes its exection.
+
 #include<stdio.h>
 void printX()
 {
@@ -90,7 +94,15 @@ main()
 		count--;
 	}	
 }
+
 output:
+
+static x = 11
+static x = 12
+static x = 13
+x =16
+x =16
+x =16
 
 4.```register storage class```: The variables declared with register specifier are allocated memory in the CPU register instaed of RAM.This means the variable has the maximum size equal to the size of the register.The register should only be used for variables that require quick access.
 
