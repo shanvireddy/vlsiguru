@@ -121,5 +121,28 @@ main()
 	printf("the address of x is:%x\n",&x);// Compilation Error because the variable x is allocated in the register
 }'''
 ### 6.I have doubt - can you tell me when I should use while() loop and do while() loop ? I really do not under stand the difference betweeb these two, can you explain to me ?
-while(): this loop is executes statements untill the condition of the while loop evaluates ```TRUE.the loop gets terminated when condion becomes ```FALSE```.
-do while():If we want to execute the loop body at least once then do while loop is used.It executs the statement secified in the loop body first,and then evaluates the condition.Do while loop executes untill the condition is ```TRUE```.if the condition is ```FALSE```loop will be terminated.
+while(): this loop is executes statements untill the condition of the while loop evaluates TRUE.the loop gets terminated when condion becomes FALSE.
+do while():If we want to execute the loop body at least once then do while loop is used.It executs the statement secified in the loop body first,and then evaluates the condition.Do while loop executes untill the condition is TRUE.if the condition is FALSE, the loop will be terminated.
+### 7.Recently while going through a C program I saw two functions malloc() & calloc() can you tell me what are they used for ?
+malloc(): This function is used to allocate the block of memory for the variables from the heap(which is not usd by the a program).It returns a pointer to a block of memory of the secifies size.
+It takes the integer as the parameter that secifis th number of bytes to be allocated.
+calloc():this function is used for both ,to allocate block of memory and initializes them to 0.
+syntax:
+ptr=(cast-type*)calloc(n,element-size)
+it allocates memory for n blocks in bytes where ezch block is of the size specified by element-size.
+### 8.Can you explain to me with the help of a small program how malloc() is used ?
+
+#include<stdio.h>
+#include<malloc.h>
+main()
+{
+	int *Ptr;
+	int count=2;
+	while(count!=0)
+	{
+		Ptr=(int*)malloc(sizeof(int));
+		printf("the ptr is:%x\n",Ptr);
+		count--;
+	}
+	free(Ptr);
+}
