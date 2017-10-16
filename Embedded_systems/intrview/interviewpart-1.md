@@ -62,6 +62,7 @@ x is 11
 y is 10
 x is 12
 y is 10
+
 ##Example2: this program exlains that the static variable will not be visible to outside function but not be destroyed when native function comletes its exection.
 
 #include<stdio.h>
@@ -134,6 +135,7 @@ ptr=(cast-type*)calloc(n,element-size)
 it allocates memory for n blocks in bytes where each block is of the size specified by element-size.
 
 ### 8.Can you explain to me with the help of a small program how malloc() is used ?
+The below program exlains how to use malloc function:
 
 #include<stdio.h>
 #include<malloc.h>
@@ -150,7 +152,7 @@ main()
 	free(Ptr);
 }
 
-###9.I keep hearing the term Pointers in C, what is it all about ? Have you used it any time ?
+### 9.I keep hearing the term Pointers in C, what is it all about ? Have you used it any time ?
 Pointer is a variable which holds the address of another variable stored elsewhere in comuter memory.To declare a pointer * symbol is preended to the variable;
 syntax:
 int *ptr; // declares a pointer variale ptr of integer data type
@@ -158,5 +160,5 @@ float *temp; // declares a pointer variale temp of float data type
 
 Yes, I have used pointer with functions to return multiple values,point to allocate memory at runtime and also used with data structures.
 
-###10.I had heard of a term called dangling pointer Can you help me to understand what exactly is a dangling pointer?
+### 10.I had heard of a term called dangling pointer Can you help me to understand what exactly is a dangling pointer?
 
