@@ -233,9 +233,37 @@ FILE *fopen(const char *filename, const char *mode)
 ````mode```` refers to the type of operaton has to be done on the file either read or write etc.
 
 ### 18. Have you heard of a term called enumuration ?
-Yes,it is a user defined datatype.
+Yes,it is a user defined datatype.It is mainly used to assign names to integral constants.
 ### 19 In fprintf() which prints a string to a file, what happen if the first parameter is replaced with stdout ?
 ### 20.Have you heard of word recursion, what is it used ? Can you write a small program which uses recursion ?
+A function calls the function by itself is called recursion.
+````
+#include <stdio.h>
+
+int fibonacci(int i)
+{
+	if(i == 0) 
+	{
+            return 0;
+   	}
+	
+   if(i == 1)
+   {
+      return 1;
+   }
+   return fibonacci(i-1) + fibonacci(i-2);
+}
+
+main()
+{
+   int i;
+   
+    for (i = 0; i < 10; i++)
+    {
+        printf("%d\t\n", fibonacci(i));
+    }
+}
+````
 ### 21. Can you help to understand what are bit wise operators ?
 ### 22. While talking to a friend I heard of a term called variable parameters in C what exactly it is  can you explain to me ?
 ### 23.Can you explain to me with an example how to use command line program with an example ?
