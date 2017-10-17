@@ -278,15 +278,23 @@ Symbol|Operator
 \~    |bitwise NOT (one's complement) (unary)
 
 ### 22. While talking to a friend I heard of a term called variable parameters in C what exactly it is  can you explain to me ?
+variable parameters are also called variable arguments in which the function can take variable number of arguments instead of predefined number of parameters.For variable argument function we must include a lirary called ````<stdarg.h>````.
 ### 23.Can you explain to me with an example how to use command line program with an example ?
+
 ### 24. I wrote a big program, but the entry point main() is empty is there any thing wrong with it ?
 Yes,If main is empty there no meaning in writing big program.There has to be call to the functions from the main.
 
-### 25.I have heard of a term called structures in C - what is its relation to structured programming
+### 25.I have heard of a term called structures in C - what is its relation to structured programming?
+structure is a userdefined datatype which allows to combine data of different datatypes.
+
 ### 26.In a  C function while declaring variables, I had mentioned a keyword *static* will this make any difference ? if so what it is ?
 Yes,there is a difference.If we declare the variable as static,the varible will not be destroyed after completion of function execution.
+
 ### 27.I am writing a C  program to accuratly calculate the path of a aeroplane flying in the sky, with help of radar signals. What in the data type I need to use to get accurate value ?
+
 ### 28. Arrays are easy to use,still we go with Linked list what is the reason for this ? 
+The size of the arrays is fixed and Insertion and deletion of a element in an array of elements is expensive.
+
 ### 29. In C function there are two terms, actual parameters and formal parameters. What are they ?
 ````Actual argumetes```` are the source of information;calling function will pass the actual pameters to the called function.
 
