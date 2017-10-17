@@ -266,6 +266,16 @@ main()
 ````
 ### 21. Can you help to understand what are bit wise operators ?
 The bitwise operators assume oerands as string of bits and bit operations are done on this operand.
+There are 6 operators
+
+Symbol|Operator
+----  |----
+&     |bitwise AND
+\|    |bitwise inclusive OR
+^     |bitwise XOR (eXclusive OR)
+<<    |left shift
+\>>   |right shift
+\~    |bitwise NOT (one's complement) (unary)
 
 ### 22. While talking to a friend I heard of a term called variable parameters in C what exactly it is  can you explain to me ?
 ### 23.Can you explain to me with an example how to use command line program with an example ?
