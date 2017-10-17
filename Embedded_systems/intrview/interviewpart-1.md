@@ -265,6 +265,8 @@ main()
 }
 ````
 ### 21. Can you help to understand what are bit wise operators ?
+The bitwise operators assume oerands as string of bits and bit operations are done on this operand.
+
 ### 22. While talking to a friend I heard of a term called variable parameters in C what exactly it is  can you explain to me ?
 ### 23.Can you explain to me with an example how to use command line program with an example ?
 ### 24. I wrote a big program, but the entry point main() is empty is there any thing wrong with it ?
