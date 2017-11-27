@@ -55,7 +55,7 @@ void CreateList()
  }
  /* function to dislay the circular list*/
  
- void DisplayList()
+void DisplayList()
 {
     scanPtr=head;
     while (scanPtr->next != head) {
@@ -66,7 +66,18 @@ void CreateList()
     // Display the last node of circular linked list.
     printf("%d\n", scanPtr->data);
 }
-
+void IsCircular()
+{
+	scanPtr=head;
+	while(scanPtr->next!=head && scanPtr->next!=NULL)
+	{
+	    scanPtr=scanPtr->next;
+    }
+    if(scanPtr->next==head)
+	    printf("the given list is circular\n\n");
+	else if(scanPtr->next==NULL)
+	   printf("the given list is not circular\n\n");
+}
 
 int main()
 {
@@ -96,8 +107,13 @@ int main()
                     DisplayList() ;
                     break ;
                 }
-                
                 case 4:
+                {
+                	IsCircular();
+                	break;
+				}
+                
+                case 5:
                 {
                     flag = 0 ;
                     break ;
@@ -116,7 +132,8 @@ int DisplayMenu()
 	printf("1.Createlist\n");
 	printf("2.Convert to CircularList\n");
 	printf("3.Dislay the list\n");
-	printf("4.Exit\n\n");
+	printf("4.list circular or not\n");
+	printf("5.Exit\n\n");
 	printf("......................\n");
 	scanf("%d",&choice);
 	printf("......................\n");
