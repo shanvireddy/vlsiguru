@@ -3,6 +3,7 @@
 #include<malloc.h>
 #include<stdlib.h>
 void createlist(char *buff);
+void DisplayList();
 typedef struct node 
     {
        char data[30] ;
@@ -23,13 +24,12 @@ typedef struct node
  	
  	printf("enter the filename\n");
  	scanf("%s",filename);
- 	 ptr=fopen(filename,"r");
+ 	ptr=fopen(filename,"r");
+ 	
  	if(ptr==NULL)
  	{
  		printf("error with file open\n");	
 	}
-	printf("................................................................................\n\n");
-	printf("The Linked List is:\n\n");
 	
  	while(fgets(str,100,ptr)!=NULL)
  	{
@@ -41,9 +41,12 @@ typedef struct node
 			token= strtok(NULL, " ,\n.");
 		}
 	}
-	printf("\n................................................................................\n");
-	printf("The List has been created\n");
+	DisplayList();
 	fclose(ptr);
+ }
+ void searchWord()
+ {
+ 	
  }
  void createlist(char *buff)
  {
@@ -65,5 +68,27 @@ typedef struct node
 		}
 		scanPtr->next=temp;
 	}
-	printf("%s => ",temp->data);
+	//printf("%s => ",temp->data);
+ }
+ void DisplayList()
+ {
+ 	struct node *temp;
+	 if(head==NULL) 
+	 {
+	 	printf("the Linked list is Empty\n\n");
+	 }
+	 else
+	 {
+	 	temp=head;
+	 	printf("................................................................................\n\n");
+	    printf("The Linked List is:\n\n");
+	 	while(temp!=NULL)
+	 	{
+			printf("%s => ",temp->data);
+			temp=temp->next;
+		}
+		printf("\n................................................................................\n");
+	    printf("The List has been created\n");
+	 }
+	 
  }
